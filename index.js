@@ -19,7 +19,7 @@ async function update() {
       type: process.env.TYPE,
       name: process.env.NAME,
       content: pubIp,
-      proxied: true,
+      ttl: 60,
     },
     {
       headers: {

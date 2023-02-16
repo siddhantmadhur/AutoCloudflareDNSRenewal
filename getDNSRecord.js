@@ -7,6 +7,16 @@ const token = process.env.TOKEN;
 const zone = process.env.ZONE_ID;
 const axios = require("axios");
 
+function outputDNSRecord(key, {id, zone_id, zone_name, name, type, content, proxiable, proxied, ttl, locked}) {
+  console.log("Record: " + key)
+  console.log("ID: " + id)
+  console.log("Name: " + name )
+  console.log("Type: " + type)
+  console.log("Content: " + content)
+  console.log("")
+
+}
+
 async function grabDNSRecordID() {
   const {
     data: { result },
@@ -20,7 +30,9 @@ async function grabDNSRecordID() {
     }
   );
 
-  console.log(result);
+  result.forEach((record, key)=>{
+    outputDNSRecord(key+1, record)
+  })
 }
 
 grabDNSRecordID();

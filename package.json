@@ -4,7 +4,8 @@
   "description": "Automatically updates your IPv4 on cloudflare.",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "autodnscheck": "node index.js",
+    "getdnsrecord": "node getDNSRecord.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
